@@ -1,4 +1,4 @@
-package Controllers;
+package Models;
 
 public class RegisterFarmer {
     private String farmerFirstName;
