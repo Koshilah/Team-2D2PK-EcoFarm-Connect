@@ -1,6 +1,8 @@
 package Views;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class RegisterFarmer extends  JFrame {
     private JTextField txtFirstName;
@@ -13,6 +15,19 @@ public class RegisterFarmer extends  JFrame {
     private JLabel lblTelephone;
     private JPanel backPanel;
     private JButton btnSubmit;
+
+    public RegisterFarmer() {
+        btnSubmit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String firstName = txtFirstName.getText();
+                String lastName = txtLastName.getText();
+                String email = txtEmail.getText();
+                String telephone = txtTele.getText();
+                RegisterFarmer f1=new RegisterFarmer();
+            }
+        });
+    }
 
     public static void main(String[] args) {
         RegisterFarmer ui =new RegisterFarmer();
