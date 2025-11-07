@@ -15,6 +15,10 @@ public class RegisterFarmer extends  JFrame {
     private JLabel lblTelephone;
     private JPanel backPanel;
     private JButton btnSubmit;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JTextField textField4;
 
     public RegisterFarmer() {
         btnSubmit.addActionListener(new ActionListener() {
