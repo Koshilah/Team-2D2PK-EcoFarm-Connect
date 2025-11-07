@@ -1,5 +1,11 @@
 package Models;
 
+import DatabaseLayer.DBConfig;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class RegisterFarmer {
     private String farmerFirstName;
     private String farmerLastName;
@@ -83,5 +89,38 @@ public class RegisterFarmer {
 
     public void setCertificates(String certificates) {
         this.certificates = certificates;
+    }
+
+    public void insertNewFarmer(){
+        DBConfig db =new DBConfig();
+        String sql = "INSERT INTO farmer (farmerFirstName, farmerLastName, farmerEmail,farmerPhone,farmerAddress,farmerCity,specialization,certificates) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            Connection connection=null;
+            connection=db.DBConnection();
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+
+            pstmt.setString(1, farmerFirstName);
+            pstmt.setString(2, farmerLastName);
+            pstmt.setString(3, farmerEmail);
+            pstmt.setString(4, farmerPhone);
+            pstmt.setString(5, farmerAddress);
+            pstmt.setString(6, farmerCity);
+            pstmt.setString(7, specialization);
+            pstmt.setString(8, certificates);
+
+            int rowsInserted = pstmt.executeUpdate();
+
+            if (rowsInserted > 0) {
+                System.out.println("Farmer inserted successfully!");
+            }
+        }
+        catch(SQLException e){
+            System.out.println("ERROR: "+e.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        RegisterFarmer r1=new RegisterFarmer("Koshila","Himala","test@gmail.com","0715487963","No.123,Galle Rd","Colombo 03","Senior","Degree");
+        r1.insertNewFarmer();
     }
 }
