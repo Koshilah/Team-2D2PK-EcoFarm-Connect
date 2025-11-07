@@ -91,7 +91,7 @@
           <text value="Address"/>
         </properties>
       </component>
-      <component id="5f58f" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="5f58f" class="javax.swing.JTextField" binding="textAddress">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -107,7 +107,7 @@
           <text value="City"/>
         </properties>
       </component>
-      <component id="fa5c6" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="fa5c6" class="javax.swing.JTextField" binding="textCity">
         <constraints>
           <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -139,7 +139,7 @@
           <text value="Certificates"/>
         </properties>
       </component>
-      <component id="953a9" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+      <component id="953a9" class="javax.swing.JTextField" binding="txtSpecialization">
         <constraints>
           <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -147,7 +147,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="a7524" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+      <component id="a7524" class="javax.swing.JTextField" binding="txtCertificates">
         <constraints>
           <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>

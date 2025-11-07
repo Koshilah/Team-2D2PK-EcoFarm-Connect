@@ -15,10 +15,10 @@ public class RegisterFarmer extends  JFrame {
     private JLabel lblTelephone;
     private JPanel backPanel;
     private JButton btnSubmit;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
+    private JTextField textAddress;
+    private JTextField textCity;
+    private JTextField txtSpecialization;
+    private JTextField txtCertificates;
 
     public RegisterFarmer() {
         btnSubmit.addActionListener(new ActionListener() {
@@ -28,7 +28,12 @@ public class RegisterFarmer extends  JFrame {
                 String lastName = txtLastName.getText();
                 String email = txtEmail.getText();
                 String telephone = txtTele.getText();
-                RegisterFarmer f1=new RegisterFarmer();
+                String address=textAddress.getText();
+                String city=textCity.getText();
+                String specialization=txtSpecialization.getText();
+                String certificates=txtCertificates.getText();
+                Models.RegisterFarmer farmer=new Models.RegisterFarmer(firstName,lastName,email,telephone,address,city,specialization,certificates);
+                farmer.insertNewFarmer();
             }
         });
     }

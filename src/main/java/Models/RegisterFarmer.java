@@ -2,6 +2,7 @@ package Models;
 
 import DatabaseLayer.DBConfig;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -94,8 +95,8 @@ public class RegisterFarmer {
     public void insertNewFarmer(){
         DBConfig db =new DBConfig();
         String sql = "INSERT INTO farmer (farmerFirstName, farmerLastName, farmerEmail,farmerPhone,farmerAddress,farmerCity,specialization,certificates) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        Connection connection=null;
         try {
-            Connection connection=null;
             connection=db.DBConnection();
             PreparedStatement pstmt = connection.prepareStatement(sql);
 
@@ -111,16 +112,17 @@ public class RegisterFarmer {
             int rowsInserted = pstmt.executeUpdate();
 
             if (rowsInserted > 0) {
-                System.out.println("Farmer inserted successfully!");
+                JOptionPane.showMessageDialog(null, "Farmer inserted successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
+            connection.close();
         }
         catch(SQLException e){
-            System.out.println("ERROR: "+e.getMessage());
+            System.out.println("ERROR: "+e.getMessage());JOptionPane.showMessageDialog(null, "Error inserting farmer: " + e.getMessage(), "Database Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     public static void main(String[] args) {
-        RegisterFarmer r1=new RegisterFarmer("Koshila","Himala","test@gmail.com","0715487963","No.123,Galle Rd","Colombo 03","Senior","Degree");
+        RegisterFarmer r1=new RegisterFarmer("Pabasara","Himan","test@gmail.com","0715487963","No.123,Galle Rd","Colombo 03","Senior","Degree");
         r1.insertNewFarmer();
     }
 }
