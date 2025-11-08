@@ -32,9 +32,9 @@ public class Crop {
             PreparedStatement pstmt = connection.prepareStatement(sql);
 
             pstmt.setString(1, cropName);
-            pstmt.setString(1, variety);
-            pstmt.setString(1, plantingDate);
-            pstmt.setString(1, expectedHarvestDate);
+            pstmt.setString(2, variety);
+            pstmt.setString(3, plantingDate);
+            pstmt.setString(4, expectedHarvestDate);
 
             int rowsInserted = pstmt.executeUpdate();
 
