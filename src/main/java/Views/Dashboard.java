@@ -11,7 +11,7 @@ public class Dashboard extends JFrame{
     private JButton button4;
     private JButton button5;
     private JButton button6;
-    private JPanel backPanel;
+    public JPanel backPanel;
 
     public Dashboard() {
         addNewFarmerButton.addActionListener(new ActionListener() {

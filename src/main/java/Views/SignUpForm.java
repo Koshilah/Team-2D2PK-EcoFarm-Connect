@@ -11,7 +11,8 @@ public class SignUpForm extends JFrame{
     private JTextField textEmail;
     private JButton registerButton;
     private JPasswordField passwordField1;
-    private JPanel backPanel;
+    public JPanel backPanel;
+    private JButton logInButton;
 
     public SignUpForm() {
         registerButton.addActionListener(new ActionListener() {
@@ -22,6 +23,25 @@ public class SignUpForm extends JFrame{
                 char[] password=passwordField1.getPassword();
                 SignUp s1=new SignUp(email,password,name);
                 s1.SignUpNew();
+                SignUpForm.this.dispose();
+                LogInForm ui=new LogInForm();
+                ui.setContentPane(ui.backPanel);
+                ui.setTitle("Register Farmer");
+                ui.setSize(600,600);
+                ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                ui.setVisible(true);
+            }
+        });
+        logInButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SignUpForm.this.dispose();
+                LogInForm ui=new LogInForm();
+                ui.setContentPane(ui.backPanel);
+                ui.setTitle("Register Farmer");
+                ui.setSize(600,600);
+                ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                ui.setVisible(true);
             }
         });
     }
