@@ -13,7 +13,7 @@ public class RegisterFarmer extends  JFrame {
     private JLabel lblLastName;
     private JLabel lblEmail;
     private JLabel lblTelephone;
-    private JPanel backPanel;
+    public JPanel backPanel;
     private JButton btnSubmit;
     private JTextField textAddress;
     private JTextField textCity;

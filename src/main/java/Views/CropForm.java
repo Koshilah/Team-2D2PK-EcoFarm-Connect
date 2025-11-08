@@ -12,7 +12,7 @@ public class CropForm extends JFrame{
     private JTextField textPlantingdate;
     private JTextField textHarvestingdate;
     private JButton ADDButton;
-    private JPanel backPanel;
+    public JPanel backPanel;
 
     public CropForm() {
         ADDButton.addActionListener(new ActionListener() {
