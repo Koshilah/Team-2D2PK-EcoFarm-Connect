@@ -29,7 +29,7 @@ public class InventoryManagementUI extends JFrame{
     public static void main(String[] args) {
         InventoryManagementUI ui =new InventoryManagementUI();
         ui.setContentPane(ui.backPanel);
-        ui.setTitle("Register Farmer");
+        ui.setTitle("Inventory Management");
         ui.setSize(600,600);
         ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ui.setVisible(true);

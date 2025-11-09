@@ -59,6 +59,9 @@ public class InventoryItems {
         this.certification = certification;
     }
 
+    public InventoryItems() {
+    }
+
     public ResultSet viewSeeds(){
         DBConfig db=new DBConfig();
         Connection conn=null;
@@ -69,14 +72,20 @@ public class InventoryItems {
             conn= db.DBConnection();
             PreparedStatement ptsm= conn.prepareStatement(sql);
             resultSet= ptsm.executeQuery();
-            conn.close();
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return resultSet;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        InventoryItems in= new InventoryItems();
+        ResultSet sq= in.viewSeeds();
 
+        while (sq.next()){
+            System.out.print(sq.getString("name"));
+            System.out.println(" "+sq.getString("category"));
+        }
     }
 }
