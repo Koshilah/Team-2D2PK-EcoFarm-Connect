@@ -12,7 +12,7 @@ public class AddSeedUI extends JFrame{
     private JTextField textunit;
     private JTextField textfarm;
     private JButton ADDButton;
-    private JPanel backPanel;
+    public JPanel backPanel;
 
     public AddSeedUI() {
         ADDButton.addActionListener(new ActionListener() {

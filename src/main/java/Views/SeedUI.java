@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class SeedUI extends JFrame{
     private  JTextPane textPane1;
-    private JPanel backPanel;
+    public JPanel backPanel;
 
     public static void main(String[] args) throws SQLException {
         SeedUI ui = new SeedUI();
