@@ -16,6 +16,7 @@ public class InventoryManagementUI extends JFrame{
         goBackToDashBoardButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                InventoryManagementUI.this.dispose();
                 Dashboard ui=new Dashboard();
                 ui.setContentPane(ui.backPanel);
                 ui.setTitle("Register Farmer");

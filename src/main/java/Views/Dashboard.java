@@ -100,7 +100,4 @@ public class Dashboard extends JFrame{
         ui.setVisible(true);
     }
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
 }
