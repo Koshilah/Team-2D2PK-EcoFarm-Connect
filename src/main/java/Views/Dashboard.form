@@ -10,9 +10,10 @@
     <children>
       <component id="7efaa" class="javax.swing.JLabel">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Elephant" size="24" style="1"/>
           <text value="DashBoard"/>
         </properties>
       </component>
@@ -32,20 +33,20 @@
           <text value="Manage Crop "/>
         </properties>
       </component>
-      <component id="90d2a" class="javax.swing.JButton" binding="button3" default-binding="true">
+      <component id="90d2a" class="javax.swing.JButton" binding="manageInventoryButton" default-binding="true">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="Manage Inventory"/>
         </properties>
       </component>
-      <component id="ba644" class="javax.swing.JButton" binding="button4" default-binding="true">
+      <component id="ba644" class="javax.swing.JButton" binding="managePreOrdersButton" default-binding="true">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="Manage Pre Orders"/>
         </properties>
       </component>
       <component id="2c360" class="javax.swing.JButton" binding="button5" default-binding="true">

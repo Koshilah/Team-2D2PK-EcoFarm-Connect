@@ -10,7 +10,7 @@ public class InventoryManagementUI extends JFrame{
     private JButton toolsButton;
     private JButton equipmentsButton;
     private JButton goBackToDashBoardButton;
-    private JPanel backPanel;
+    public JPanel backPanel;
 
     public InventoryManagementUI() {
         goBackToDashBoardButton.addActionListener(new ActionListener() {

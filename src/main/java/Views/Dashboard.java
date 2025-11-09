@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 public class Dashboard extends JFrame{
     private JButton addNewFarmerButton;
     private JButton manageCropButton;
-    private JButton button3;
-    private JButton button4;
+    private JButton manageInventoryButton;
+    private JButton managePreOrdersButton;
     private JButton button5;
     private JButton button6;
     public JPanel backPanel;
@@ -17,6 +17,7 @@ public class Dashboard extends JFrame{
         addNewFarmerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Dashboard.this.dispose();
                 RegisterFarmer ui =new RegisterFarmer();
                 ui.setContentPane(ui.backPanel);
                 ui.setTitle("Register Farmer");
@@ -28,12 +29,32 @@ public class Dashboard extends JFrame{
         manageCropButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Dashboard.this.dispose();
                 CropForm ui =new CropForm();
                 ui.setContentPane(ui.backPanel);
                 ui.setTitle("Register Farmer");
                 ui.setSize(600,600);
                 ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 ui.setVisible(true);
+            }
+        });
+        manageInventoryButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Dashboard.this.dispose();
+                InventoryManagementUI ui =new InventoryManagementUI();
+                ui.setContentPane(ui.backPanel);
+                ui.setTitle("Inventory Management");
+                ui.setSize(600,600);
+                ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                ui.setVisible(true);
+            }
+        });
+        managePreOrdersButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Dashboard.this.dispose();
+                new OrderUI();
             }
         });
     }
