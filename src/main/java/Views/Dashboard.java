@@ -9,9 +9,10 @@ public class Dashboard extends JFrame{
     private JButton manageCropButton;
     private JButton manageInventoryButton;
     private JButton managePreOrdersButton;
-    private JButton button5;
-    private JButton button6;
+    private JButton manageProductionButton;
+    private JButton sendNotificationsButton;
     public JPanel backPanel;
+    private JButton logOutButton;
 
     public Dashboard() {
         addNewFarmerButton.addActionListener(new ActionListener() {
@@ -57,6 +58,37 @@ public class Dashboard extends JFrame{
                 new OrderUI();
             }
         });
+        manageProductionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Dashboard.this.dispose();
+                new ProduceUI();
+            }
+        });
+        sendNotificationsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Dashboard.this.dispose();
+                NotificationUI ui = new NotificationUI();
+                ui.setContentPane(ui.backPanel);
+                ui.setTitle("Send Notification");
+                ui.setSize(600,600);
+                ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                ui.setVisible(true);
+            }
+        });
+        logOutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Dashboard.this.dispose();
+                LogInForm ui=new LogInForm();
+                ui.setContentPane(ui.backPanel);
+                ui.setTitle("Register Farmer");
+                ui.setSize(600,600);
+                ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                ui.setVisible(true);
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -66,5 +98,9 @@ public class Dashboard extends JFrame{
         ui.setSize(600,600);
         ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ui.setVisible(true);
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }

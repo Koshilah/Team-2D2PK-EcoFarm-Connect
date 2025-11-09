@@ -10,7 +10,7 @@ public class NotificationUI extends JFrame {
     private JTextField textField1;
     private JTextArea textArea1;
     private JButton sendButton;
-    private JPanel backPanel;
+    public JPanel backPanel;
 
     public NotificationUI() {
         sendButton.addActionListener(new ActionListener() {
