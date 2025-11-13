@@ -7,7 +7,7 @@ public class DBConfig {
 
     private final String url = "jdbc:mysql://localhost:3306/econfarmconnect";
     private final String user = "root";
-    private final String password = "koshiLA123(@)";
+    private final String password = "root123";
 
     public Connection DBConnection() {
         Connection connection = null;
