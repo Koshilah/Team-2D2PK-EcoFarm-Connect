@@ -19,7 +19,7 @@ public class Dashboard extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 Dashboard.this.dispose();
-                RegisterFarmer ui =new RegisterFarmer();
+                ManageFarmer ui = new ManageFarmer();
                 ui.setContentPane(ui.backPanel);
                 ui.setTitle("Register Farmer");
                 ui.setSize(600,600);

@@ -14,6 +14,7 @@ public class FarmerDisplayGUI extends JFrame {
     private DefaultTableModel tableModel;
     private JButton refreshButton;
 
+
     public FarmerDisplayGUI() {
         setTitle("Farmer Management System");
         setSize(1000, 600);
