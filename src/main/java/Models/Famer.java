@@ -45,4 +45,42 @@ public class Famer {
 
         return farmers;
     }
+
+    public RegisterFarmer getFarmerByID(String farmerID) {
+        int id = Integer.parseInt(farmerID);
+        DBConfig db = new DBConfig();
+        String sql = "SELECT * FROM farmer WHERE farmerID = ?";
+        Connection connection = null;
+        RegisterFarmer farmer = null;
+
+        try {
+            connection = db.DBConnection();
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                farmer = new RegisterFarmer(
+                        rs.getString("farmerFirstName"),
+                        rs.getString("farmerLastName"),
+                        rs.getString("farmerEmail"),
+                        rs.getString("farmerPhone"), // Make sure this matches your actual column name
+                        rs.getString("farmerAddress"),
+                        rs.getString("farmerCity"),
+                        rs.getString("specialization"),
+                        rs.getString("certificates")
+                );
+            }
+
+            rs.close();
+            pstmt.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+
+        return farmer;
+    }
+
 }
