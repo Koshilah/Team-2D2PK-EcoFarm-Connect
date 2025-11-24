@@ -144,14 +144,4 @@ public class AnalyticsDashboard {
 
         return totalRevenue;
     }
-
-    public static void main(String[] args) {
-        int farmerCount = getCropsToHarvestThisMonth();
-        System.out.println("Number of farmers registered: " + farmerCount);
-        System.out.println("Pending Orders: " + getPendingOrders());
-        System.out.println("Delivered Orders: " + getDeliveredOrders());
-        System.out.println("Shipped Orders: " + getShippedOrders());
-        double revenue = getTotalRevenueThisMonth();
-        System.out.println("Total revenue for this month: " + revenue);
-    }
 }
