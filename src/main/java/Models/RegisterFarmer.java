@@ -11,6 +11,21 @@ public class RegisterFarmer {
     private String farmerFirstName;
     private String farmerLastName;
     private String farmerEmail;
+
+    @Override
+    public String toString() {
+        return "RegisterInfo{" +
+                "farmerFirstName='" + farmerFirstName + '\'' +
+                ", farmerLastName='" + farmerLastName + '\'' +
+                ", farmerEmail='" + farmerEmail + '\'' +
+                ", farmerPhone='" + farmerPhone + '\'' +
+                ", farmerAddress='" + farmerAddress + '\'' +
+                ", farmerCity='" + farmerCity + '\'' +
+                ", specialization='" + specialization + '\'' +
+                ", certificates='" + certificates + '\'' +
+                '}';
+    }
+
     private String farmerPhone;
     private String farmerAddress;
     private String farmerCity;

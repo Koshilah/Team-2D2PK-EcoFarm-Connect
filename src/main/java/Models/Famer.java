@@ -49,7 +49,7 @@ public class Famer {
     public RegisterFarmer getFarmerByID(String farmerID) {
         int id = Integer.parseInt(farmerID);
         DBConfig db = new DBConfig();
-        String sql = "SELECT * FROM farmer WHERE farmerID = ?";
+        String sql = "SELECT * FROM farmer WHERE id = ?";
         Connection connection = null;
         RegisterFarmer farmer = null;
 
@@ -64,7 +64,7 @@ public class Famer {
                         rs.getString("farmerFirstName"),
                         rs.getString("farmerLastName"),
                         rs.getString("farmerEmail"),
-                        rs.getString("farmerPhone"), // Make sure this matches your actual column name
+                        rs.getString("phoneNumber"),
                         rs.getString("farmerAddress"),
                         rs.getString("farmerCity"),
                         rs.getString("specialization"),

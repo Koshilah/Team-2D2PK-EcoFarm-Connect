@@ -1,5 +1,7 @@
 package Views;
 
+import Models.Famer;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +11,8 @@ public class ManageFarmer extends JFrame {
     private JButton viewAllFarmersButton;
     private JButton backToDashBoardButton;
     public JPanel backPanel;
+    private JTextField txtFarmerId;
+    private JButton searchButton;
 
     public ManageFarmer() {
         addNewFarmerButton.addActionListener(new ActionListener() {
@@ -41,6 +45,20 @@ public class ManageFarmer extends JFrame {
                 ui.setSize(600,600);
                 ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 ui.setVisible(true);
+            }
+        });
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Famer farmer=new Famer();
+                Models.RegisterFarmer farmer1=farmer.getFarmerByID(txtFarmerId.getText());
+                if(farmer1!=null){
+                    JOptionPane.showMessageDialog(null, farmer1.toString(), "Success", JOptionPane.INFORMATION_MESSAGE);
+
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Farmer not found!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
     }
