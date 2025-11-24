@@ -79,7 +79,22 @@ CREATE TABLE notifications (
     sentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE quality_checkpoints (
+  checkpointID INT PRIMARY KEY AUTO_INCREMENT,
+  produceID varchar(20),
+  checkpointName VARCHAR(100),
+  status VARCHAR(50),
+  dateChecked DATE,
+  FOREIGN KEY (produceID) REFERENCES produce(produce_id)
+);
 
+CREATE TABLE inspector_alerts (
+  alertID INT PRIMARY KEY AUTO_INCREMENT,
+  produceID varchar(20),
+  inspectorID VARCHAR(50),
+  message TEXT,
+  FOREIGN KEY (produceID) REFERENCES produce(produce_id)
+);
 
 
 
