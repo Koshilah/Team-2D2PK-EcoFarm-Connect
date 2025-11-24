@@ -3,15 +3,17 @@ package Models;
 
 
 import DatabaseLayer.DBConfig;
+
+import javax.swing.*;
 import java.sql.*;
 
 public class QualityCheckpoint {
-    public int produceID;
+    public String produceID;
     public String checkpointName;
     public String status;
     public String dateChecked;
 
-    public QualityCheckpoint(int produceID, String checkpointName, String status, String dateChecked) {
+    public QualityCheckpoint(String produceID, String checkpointName, String status, String dateChecked) {
         this.produceID = produceID;
         this.checkpointName = checkpointName;
         this.status = status;
@@ -25,13 +27,13 @@ public class QualityCheckpoint {
         try (Connection conn = db.DBConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setInt(1, produceID);
+            pstmt.setString(1, produceID);
             pstmt.setString(2, checkpointName);
             pstmt.setString(3, status);
             pstmt.setString(4, dateChecked);
 
             pstmt.executeUpdate();
-            System.out.println("Quality checkpoint logged.");
+            JOptionPane.showMessageDialog(null, "Quality Check Logged successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException e) {
             System.out.println("ERROR: " + e.getMessage());
         }

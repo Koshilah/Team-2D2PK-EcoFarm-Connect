@@ -6,11 +6,11 @@ import javax.swing.*;
 import java.sql.*;
 
 public class InspectorAlert {
-    public int produceID;
+    public String produceID;
     public String inspectorID;
     public String message;
 
-    public InspectorAlert(int produceID, String inspectorID, String message) {
+    public InspectorAlert(String produceID, String inspectorID, String message) {
         this.produceID = produceID;
         this.inspectorID = inspectorID;
         this.message = message;
@@ -23,7 +23,7 @@ public class InspectorAlert {
         try (Connection conn = db.DBConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setInt(1, produceID);
+            pstmt.setString(1, produceID);
             pstmt.setString(2, inspectorID);
             pstmt.setString(3, message);
 
