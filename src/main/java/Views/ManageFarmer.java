@@ -13,6 +13,8 @@ public class ManageFarmer extends JFrame {
     public JPanel backPanel;
     private JTextField txtFarmerId;
     private JButton searchButton;
+    private JButton updateButton;
+    private JButton deleteButton;
 
     public ManageFarmer() {
         addNewFarmerButton.addActionListener(new ActionListener() {
@@ -59,6 +61,13 @@ public class ManageFarmer extends JFrame {
                 else{
                     JOptionPane.showMessageDialog(null, "Farmer not found!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+        deleteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Famer farmer=new Famer();
+                farmer.deleteFarmer(txtFarmerId.getText());
             }
         });
     }

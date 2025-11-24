@@ -1,6 +1,8 @@
 package Models;
 
 import DatabaseLayer.DBConfig;
+
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -81,6 +83,36 @@ public class Famer {
         }
 
         return farmer;
+    }
+
+    public static void deleteFarmer(String farmerId) {
+        DBConfig db = new DBConfig();
+        String sql = "DELETE FROM farmer WHERE id = ?";
+
+        try (Connection conn = db.DBConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, farmerId);
+            int rowsDeleted = pstmt.executeUpdate();
+
+            if (rowsDeleted > 0) {
+                JOptionPane.showMessageDialog(null,
+                        "Farmer deleted successfully!",
+                        "Success",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null,
+                        "No farmer found with ID: " + farmerId,
+                        "Not Found",
+                        JOptionPane.WARNING_MESSAGE);
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,
+                    "Error deleting farmer: " + e.getMessage(),
+                    "Database Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
 
 }
