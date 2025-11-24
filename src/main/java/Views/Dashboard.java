@@ -69,9 +69,9 @@ public class Dashboard extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 Dashboard.this.dispose();
-                NotificationUI ui = new NotificationUI();
+                NotificationMainUI ui=new NotificationMainUI();
                 ui.setContentPane(ui.backPanel);
-                ui.setTitle("Send Notification");
+                ui.setTitle("Register Farmer");
                 ui.setSize(600,600);
                 ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 ui.setVisible(true);

@@ -5,13 +5,16 @@ import DatabaseLayer.DBConfig;
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Notification {
-    String notificationID;
-    String FarmerID;
-    String message;
-    String SentDate;
+    public String notificationID;
+    public String FarmerID;
+    public String message;
+    public String SentDate;
 
     public Notification(String notificationID, String farmerID, String message, String sentDate) {
         this.notificationID = notificationID;
@@ -23,6 +26,9 @@ public class Notification {
     public Notification(String farmerID, String message) {
         FarmerID = farmerID;
         this.message = message;
+    }
+
+    public Notification() {
     }
 
     public void AddNewMessage() {
@@ -46,4 +52,39 @@ public class Notification {
             System.out.println(e.getMessage());
         }
     }
+
+
+    public List<Notification> getMessagesByFarmerID(String farmerID) {
+        List<Notification> messages = new ArrayList<>();
+        DBConfig db = new DBConfig();
+        String sql = "SELECT * FROM notifications WHERE farmerID = ?";
+        Connection conn = null;
+
+        try {
+            conn = db.DBConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, farmerID);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                Notification note = new Notification(
+                        rs.getString("notificationID"),
+                        rs.getString("farmerID"),
+                        rs.getString("message"),
+                        rs.getString("sentDate")
+                );
+                messages.add(note);
+            }
+
+            rs.close();
+            pstmt.close();
+            conn.close();
+
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+
+        return messages;
+    }
+
 }
