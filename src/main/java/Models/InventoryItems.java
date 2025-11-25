@@ -106,13 +106,4 @@ public class InventoryItems {
         return resultSet;
     }
 
-    public static void main(String[] args) throws SQLException {
-        InventoryItems in= new InventoryItems();
-        ResultSet sq= in.viewSeeds();
-
-        while (sq.next()){
-            System.out.print(sq.getString("name"));
-            System.out.println(" "+sq.getString("category"));
-        }
-    }
 }
