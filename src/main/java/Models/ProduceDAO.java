@@ -1,5 +1,5 @@
 package Models;
-// 7
+// 4
 import DatabaseLayer.DBConfig;
 
 import java.sql.*;
@@ -15,7 +15,7 @@ public class ProduceDAO {
 
         try {
             connection = db.DBConnection();
-            String sql = "SELECT * FROM produce WHERE harvest_date >= ?";
+            String sql = "SELECT * FROM produce WHERE harvest_date <= ?";
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setDate(1, Date.valueOf(date));
             ResultSet rs = stmt.executeQuery();

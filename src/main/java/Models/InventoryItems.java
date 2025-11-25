@@ -106,4 +106,47 @@ public class InventoryItems {
         return resultSet;
     }
 
+    public void AddNewFerterlizer(){
+        DBConfig db = new DBConfig();
+        Connection conn=null;
+        String sql="Insert into inventory (name,category,quantity,unit,farm_id) values (?,?,?,?,?)";
+
+        try {
+            conn=db.DBConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, name);
+            pstmt.setString(2, category);
+            pstmt.setString(3, quantity);
+            pstmt.setString(4, unit);
+            pstmt.setString(5, farmId);
+
+            int rowsInserted = pstmt.executeUpdate();
+
+            if (rowsInserted > 0) {
+                JOptionPane.showMessageDialog(null, "New Ferterlizer Added successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public ResultSet viewFerterlizers(){
+        DBConfig db=new DBConfig();
+        Connection conn=null;
+        String sql="SELECT * FROM inventory WHERE category='ferterlizers'";
+        ResultSet resultSet=null;
+
+        try{
+            conn= db.DBConnection();
+            PreparedStatement ptsm= conn.prepareStatement(sql);
+            resultSet= ptsm.executeQuery();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return resultSet;
+    }
+
 }

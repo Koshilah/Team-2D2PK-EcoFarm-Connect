@@ -61,8 +61,12 @@ public class Dashboard extends JFrame{
         manageProductionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Dashboard.this.dispose();
-                new ProduceUI();
+                ManageProduceANDQuality ui=new ManageProduceANDQuality();
+                ui.setContentPane(ui.backPanel);
+                ui.setTitle("Register Farmer");
+                ui.setSize(600,300);
+                ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                ui.setVisible(true);
             }
         });
         sendNotificationsButton.addActionListener(new ActionListener() {

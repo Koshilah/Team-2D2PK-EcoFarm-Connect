@@ -31,7 +31,18 @@ public class InventoryManagementUI extends JFrame{
                 InventoryManagementUI.this.dispose();
                 InventorySeeds ui=new InventorySeeds();
                 ui.setContentPane(ui.backPanel);
-                ui.setTitle("Register Farmer");
+                ui.setTitle("Seeds Inventory");
+                ui.setSize(600,600);
+                ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                ui.setVisible(true);
+            }
+        });
+        ferterlizersButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                InventoryFerterlizers ui=new InventoryFerterlizers();
+                ui.setContentPane(ui.backPanel);
+                ui.setTitle("Fertilizer Inventory");
                 ui.setSize(600,600);
                 ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 ui.setVisible(true);

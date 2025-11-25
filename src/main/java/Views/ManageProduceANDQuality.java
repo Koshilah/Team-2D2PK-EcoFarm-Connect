@@ -9,7 +9,8 @@ public class ManageProduceANDQuality extends JFrame {
     private JButton addProduceButton;
     private JButton qualityReportButton;
     private JButton backToDashboardButton;
-    private JPanel backPanel;
+    public JPanel backPanel;
+    private JButton viewProducesButton;
 
     public ManageProduceANDQuality() {
         alertAnInspectorButton.addActionListener(new ActionListener() {
@@ -46,6 +47,12 @@ public class ManageProduceANDQuality extends JFrame {
                 SwingUtilities.invokeLater(() -> {
                     new AddProduceUI().setVisible(true);
                 });
+            }
+        });
+        viewProducesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new ProduceUI();
             }
         });
     }
