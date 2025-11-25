@@ -84,7 +84,7 @@ public class ManageFarmer extends JFrame {
         ManageFarmer ui = new ManageFarmer();
         ui.setContentPane(ui.backPanel);
         ui.setTitle("Register Farmer");
-        ui.setSize(700,500);
+        ui.setSize(900,500);
         ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ui.setVisible(true);
     }

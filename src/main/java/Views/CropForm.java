@@ -13,6 +13,7 @@ public class CropForm extends JFrame{
     private JTextField textHarvestingdate;
     private JButton ADDButton;
     public JPanel backPanel;
+    private JButton viewCropsButton;
 
     public CropForm() {
         ADDButton.addActionListener(new ActionListener() {
@@ -26,6 +27,14 @@ public class CropForm extends JFrame{
                 Crop crop=new Crop(cropName,veraity,planingDate,harvestingDate);
                 crop.insertNewCrop();
 
+            }
+        });
+        viewCropsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SwingUtilities.invokeLater(() -> {
+                    new CropViewUI().setVisible(true);
+                });
             }
         });
     }
