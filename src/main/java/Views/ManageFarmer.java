@@ -15,6 +15,7 @@ public class ManageFarmer extends JFrame {
     private JButton updateButton;
     private JButton deleteButton;
     private JLabel lblFarmercount;
+    private JTextField texttele;
 
     public ManageFarmer() {
         addNewFarmerButton.addActionListener(new ActionListener() {
@@ -71,6 +72,12 @@ public class ManageFarmer extends JFrame {
             }
         });
         lblFarmercount.setText(Integer.toString(Famer.getFarmerCount()));
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Famer.updateFarmerTelephone(txtFarmerId.getText(), texttele.getText());
+            }
+        });
     }
 
     public static void main(String[] args) {

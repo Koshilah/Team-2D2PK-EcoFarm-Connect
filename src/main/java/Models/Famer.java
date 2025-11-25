@@ -134,4 +134,30 @@ public class Famer {
         return count;
     }
 
+    public static void updateFarmerTelephone(String id, String newTelephone) {
+        DBConfig db = new DBConfig();
+        String sql = "UPDATE farmer SET phoneNumber = ? WHERE id = ?";
+
+        try (Connection conn = db.DBConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, newTelephone);
+            pstmt.setString(2, id);
+
+            int rowsUpdated = pstmt.executeUpdate();
+
+            if (rowsUpdated > 0) {
+                JOptionPane.showMessageDialog(null,
+                        "Farmer telephone updated successfully!");
+            } else {
+                JOptionPane.showMessageDialog(null,
+                        "No farmer found with ID: " + id);
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,
+                    "Error updating telephone: " + e.getMessage());
+        }
+    }
+
 }
