@@ -11,21 +11,6 @@ public class RegisterFarmer {
     private String farmerFirstName;
     private String farmerLastName;
     private String farmerEmail;
-
-    @Override
-    public String toString() {
-        return "RegisterInfo{" +
-                "\nfarmerFirstName='" + farmerFirstName + '\'' +
-                ", \n farmerLastName='" + farmerLastName + '\'' +
-                ",\n farmerEmail='" + farmerEmail + '\'' +
-                ",\n farmerPhone='" + farmerPhone + '\'' +
-                ",\n farmerAddress='" + farmerAddress + '\'' +
-                ",\n farmerCity='" + farmerCity + '\'' +
-                ",\n specialization='" + specialization + '\'' +
-                ",\n certificates='" + certificates + '\'' +
-                '}';
-    }
-
     private String farmerPhone;
     private String farmerAddress;
     private String farmerCity;
@@ -105,6 +90,20 @@ public class RegisterFarmer {
 
     public void setCertificates(String certificates) {
         this.certificates = certificates;
+    }
+
+    @Override
+    public String toString() {
+        return "RegisterInfo{" +
+                "\nfarmerFirstName='" + farmerFirstName + '\'' +
+                ", \n farmerLastName='" + farmerLastName + '\'' +
+                ",\n farmerEmail='" + farmerEmail + '\'' +
+                ",\n farmerPhone='" + farmerPhone + '\'' +
+                ",\n farmerAddress='" + farmerAddress + '\'' +
+                ",\n farmerCity='" + farmerCity + '\'' +
+                ",\n specialization='" + specialization + '\'' +
+                ",\n certificates='" + certificates + '\'' +
+                '}';
     }
 
     public void insertNewFarmer(){

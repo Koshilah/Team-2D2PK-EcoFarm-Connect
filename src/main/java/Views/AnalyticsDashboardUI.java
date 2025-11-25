@@ -1,7 +1,6 @@
 package Views;
 
 import Models.AnalyticsDashboard;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
