@@ -18,6 +18,7 @@ public class RegisterFarmer extends  JFrame {
     private JTextField textAddress;
     private JTextField textCity;
     private JTextField txtSpecialization;
+    private JComboBox comboBox1;
     private JTextField txtCertificates;
 
     public RegisterFarmer() {
@@ -31,7 +32,7 @@ public class RegisterFarmer extends  JFrame {
                 String address=textAddress.getText();
                 String city=textCity.getText();
                 String specialization=txtSpecialization.getText();
-                String certificates=txtCertificates.getText();
+                String certificates=comboBox1.getSelectedItem().toString();
                 Models.RegisterFarmer farmer=new Models.RegisterFarmer(firstName,lastName,email,telephone,address,city,specialization,certificates);
                 farmer.insertNewFarmer();
             }

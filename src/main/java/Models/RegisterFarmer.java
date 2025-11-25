@@ -15,14 +15,14 @@ public class RegisterFarmer {
     @Override
     public String toString() {
         return "RegisterInfo{" +
-                "farmerFirstName='" + farmerFirstName + '\'' +
-                ", farmerLastName='" + farmerLastName + '\'' +
-                ", farmerEmail='" + farmerEmail + '\'' +
-                ", farmerPhone='" + farmerPhone + '\'' +
-                ", farmerAddress='" + farmerAddress + '\'' +
-                ", farmerCity='" + farmerCity + '\'' +
-                ", specialization='" + specialization + '\'' +
-                ", certificates='" + certificates + '\'' +
+                "\nfarmerFirstName='" + farmerFirstName + '\'' +
+                ", \n farmerLastName='" + farmerLastName + '\'' +
+                ",\n farmerEmail='" + farmerEmail + '\'' +
+                ",\n farmerPhone='" + farmerPhone + '\'' +
+                ",\n farmerAddress='" + farmerAddress + '\'' +
+                ",\n farmerCity='" + farmerCity + '\'' +
+                ",\n specialization='" + specialization + '\'' +
+                ",\n certificates='" + certificates + '\'' +
                 '}';
     }
 
@@ -109,7 +109,7 @@ public class RegisterFarmer {
 
     public void insertNewFarmer(){
         DBConfig db =new DBConfig();
-        String sql = "INSERT INTO farmer (farmerFirstName, farmerLastName, farmerEmail,farmerPhone,farmerAddress,farmerCity,specialization,certificates) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO farmer (farmerFirstName, farmerLastName, farmerEmail,phoneNumber,farmerAddress,farmerCity,specialization,certificates) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         Connection connection=null;
         try {
             connection=db.DBConnection();
