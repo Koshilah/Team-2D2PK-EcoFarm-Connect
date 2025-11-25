@@ -25,9 +25,9 @@ public class LogInForm extends JFrame{
                 if (status){
                     JOptionPane.showMessageDialog(null, "Log In successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                     LogInForm.this.dispose();
-                    Dashboard ui=new Dashboard();
+                    AnalyticsDashboardUI ui=new AnalyticsDashboardUI();
                     ui.setContentPane(ui.backPanel);
-                    ui.setTitle("Register Farmer");
+                    ui.setTitle("Analytics Dashboard");
                     ui.setSize(600,600);
                     ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     ui.setVisible(true);

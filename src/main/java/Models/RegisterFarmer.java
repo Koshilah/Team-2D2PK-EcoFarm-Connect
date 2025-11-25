@@ -1,5 +1,5 @@
 package Models;
-
+// 2
 import DatabaseLayer.DBConfig;
 
 import javax.swing.*;
@@ -134,10 +134,5 @@ public class RegisterFarmer {
         catch(SQLException e){
             System.out.println("ERROR: "+e.getMessage());JOptionPane.showMessageDialog(null, "Error inserting farmer: " + e.getMessage(), "Database Error", JOptionPane.ERROR_MESSAGE);
         }
-    }
-
-    public static void main(String[] args) {
-        RegisterFarmer r1=new RegisterFarmer("Pabasara","Himan","test@gmail.com","0715487963","No.123,Galle Rd","Colombo 03","Senior","Degree");
-        r1.insertNewFarmer();
     }
 }

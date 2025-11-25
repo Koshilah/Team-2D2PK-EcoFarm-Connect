@@ -14,6 +14,7 @@ public class ManageFarmer extends JFrame {
     private JButton searchButton;
     private JButton updateButton;
     private JButton deleteButton;
+    private JLabel lblFarmercount;
 
     public ManageFarmer() {
         addNewFarmerButton.addActionListener(new ActionListener() {
@@ -69,13 +70,14 @@ public class ManageFarmer extends JFrame {
                 farmer.deleteFarmer(txtFarmerId.getText());
             }
         });
+        lblFarmercount.setText(Integer.toString(Famer.getFarmerCount()));
     }
 
     public static void main(String[] args) {
         ManageFarmer ui = new ManageFarmer();
         ui.setContentPane(ui.backPanel);
         ui.setTitle("Register Farmer");
-        ui.setSize(600,600);
+        ui.setSize(700,500);
         ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ui.setVisible(true);
     }

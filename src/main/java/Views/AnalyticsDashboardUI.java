@@ -12,7 +12,7 @@ public class AnalyticsDashboardUI extends JFrame {
     private JLabel lblharvestcrops;
     private JLabel lblrevenue;
     private JButton advancedDashboardButton;
-    private JPanel backPanel;
+    public JPanel backPanel;
     private JLabel pending;
     private JLabel shipped;
     private JLabel delivered;

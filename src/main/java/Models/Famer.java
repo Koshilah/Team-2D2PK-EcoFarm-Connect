@@ -1,5 +1,5 @@
 package Models;
-
+// 2
 import DatabaseLayer.DBConfig;
 
 import javax.swing.*;
@@ -113,6 +113,25 @@ public class Famer {
                     "Database Error",
                     JOptionPane.ERROR_MESSAGE);
         }
+    }
+    public static int getFarmerCount() {
+        DBConfig db = new DBConfig();
+        String sql = "SELECT COUNT(*) AS total FROM farmer";
+        int count = 0;
+
+        try (Connection conn = db.DBConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            if (rs.next()) {
+                count = rs.getInt("total");
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error fetching farmer count: " + e.getMessage());
+        }
+
+        return count;
     }
 
 }
